@@ -2,7 +2,7 @@ import 'src/core/polyfills';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ComponentForTest } from 'src/ComponentForTest';
+import { App } from 'src/App';
 import { initialize } from 'src/core/initialisation';
 
 function render() {
@@ -10,7 +10,7 @@ function render() {
     reactContainer.className = 'app';
     document.body.appendChild(reactContainer);
 
-    ReactDOM.render(<ComponentForTest />, reactContainer);
+    ReactDOM.render(<App />, reactContainer);
 }
 
 initialize().then(render);

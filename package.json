@@ -8,8 +8,8 @@
     "webpack-dev-server": "npm run ts-commonjs -- webpack-dev-server --progress --config=./webpack/webpack.config.dev.ts",
     "webpack": "npm run ts-commonjs -- webpack --progress",
     "ts-commonjs": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}'",
-    "test": "jest -i --forceExit --coverage --verbose",
-    "test:watch": "jest -i --watchAll",
+    "test": "jest --config=jest.config.js --watch",
+    "test:watch": "jest --config=jest.config.js --watchAll",
     "lint": "TIMING=1 eslint . --ext .ts,.tsx,.js",
     "lint:css": "stylelint './**/*.tsx'",
     "lint:fix": "npm run lint -- --fix"
@@ -24,6 +24,8 @@
     ]
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.1",
+    "@types/react-redux": "^7.1.22",
     "antd": "^3.23.2",
     "class-transformer": "^0.2.3",
     "core-js": "^3.2.1",
@@ -32,7 +34,8 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^6.2.1",
     "regenerator-runtime": "^0.13.3",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -121,9 +124,9 @@
     "*.{ts,js,tsx,jsx}": [
       "stylelint",
       "eslint --fix",
-      "git add",
-      "jest --bail --findRelatedTests"
+      "git add"
     ]
   },
   "author": "ivan.kopenkov@gmail.com"
 }
+

@@ -16,6 +16,7 @@ const config: webpack.Configuration = {
         }),
         new Webpackbar(),
         new CleanTerminalPlugin(),
+        // ['@babel/plugin-proposal-export-default-from'],
     ],
     devServer: {
         compress: true,
